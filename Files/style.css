@@ -1,11 +1,44 @@
 ﻿html, body {
 	overflow: hidden;
-	margin: auto;
 	height: 100%;
 	width: 100%;
 	background: transparent;
+	padding: 0;
+	margin: 0 auto;
 }
 
 iframe {
 	overflow: hidden;
+}
+
+#topmenu{
+	border-bottom: solid 1px #CC3D23;
+	height: 34px;
+}
+#topmenu .logo{
+	float: left;
+}
+#topmenu .logo>img{
+	width: 32px;
+}
+#topmenu ul{
+	float: left;
+	margin: auto;
+	padding: 0;
+	list-style: none;
+}
+#topmenu ul li{
+	float: left;
+}
+#topmenu ul li a{
+	padding: 12px;
+	color: #292929;
+	font-family: 'Exo 2',sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 34px;
+	font-size: 12px;
+}
+#topmenu ul li>a:hover{
+	background-color: #CC3D23;
 }
