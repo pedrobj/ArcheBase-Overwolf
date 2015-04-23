@@ -1,5 +1,4 @@
 ﻿html, body {
-	overflow: hidden;
 	height: 100%;
 	width: 100%;
 	background: transparent;
@@ -41,4 +40,447 @@ iframe {
 }
 #topmenu ul li>a:hover{
 	background-color: #CC3D23;
+}
+
+/* ----------------- Icons ----------------- */
+i.icon {
+	border: solid 1px #323232;
+	margin: 0 auto;
+	border: 0;
+	background-size: 94px;
+	width: 94px;
+	height: 94px;
+	cursor: pointer;
+}
+i.min {
+	background-size: 28px 28px !important;
+	width: 28px;
+	height: 28px;
+}
+i.thumb{
+	background-size: 58px !important;
+	width:58px;
+	height:58px;
+}
+i.small{
+	background-size: 34px 36px !important;
+	width: 34px;
+	height: 34px;
+}
+
+/* trees */
+i.t1{
+	background-image: url(http://arche-base.com/img/icons/Tree/0.png);
+}
+i.t2{
+	background-image: url(http://arche-base.com/img/icons/Tree/1.png);
+}
+i.t3{
+	background-image: url(http://arche-base.com/img/icons/Tree/2.png);
+}
+i.t4{
+	background-image: url(http://arche-base.com/img/icons/Tree/3.png);
+}
+i.t5{
+	background-image: url(http://arche-base.com/img/icons/Tree/4.png);
+}
+i.t6{
+	background-image: url(http://arche-base.com/img/icons/Tree/5.png);
+}
+i.t7{
+	background-image: url(http://arche-base.com/img/icons/Tree/6.png);
+}
+i.t8{
+	background-image: url(http://arche-base.com/img/icons/Tree/7.png);
+}
+i.t9{
+	background-image: url(http://arche-base.com/img/icons/Tree/8.png);
+}
+i.t10{
+	background-image: url(http://arche-base.com/img/icons/Tree/9.png);
+}
+
+/* roles */
+.role{
+	display: inline-block;
+	width: 45px;
+	height: 36px;
+	background-image: url(http://arche-base.com/img/icons/roles.png);
+	color: #CCC;
+	text-align: center;
+	font-size: 9px;
+}
+.role:hover{
+	background-position-y: 42px;
+}
+.dps{
+	background-position: -48px 0px;
+	color: rgb(212,81,81);
+}
+.healer{
+	background-position: 0px 0px;
+	color: rgb(208,104,148);
+}
+.tank{
+	background-position: 48px 0;
+	color: rgb(94,152,3);
+}
+
+/* types */
+.badge-type {
+	vertical-align: top;
+	font-weight: 400;
+	text-transform: uppercase;
+	box-shadow: 1px 1px 2px #000;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	border-radius: 4px;
+}
+.pvp {
+	background-color: #d24c4c !important;
+}
+.pve {
+	background-color: #36c9a4 !important;
+}
+.leveling {
+	background-color: #cccc00 !important;
+	text-transform: capitalize !important;
+}
+
+/* ----------------------- Home Feed --------------------------*/
+#feed{
+	/*width: 700px;
+	float: left;
+	*/
+}
+#feed-content{
+	padding: 8px;
+	padding-bottom: 0;
+}
+#feed-result{
+	padding: 8px;
+}
+#feed-bottom{
+	padding-bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+.feed-main{
+	font-family: "Friz2";
+	background: #eee url(http://arche-base.com/img/archeage/feed-bg.jpg) center no-repeat;
+	background-size: cover;
+	min-height: 150px;
+	position: relative;
+	/*width: 1100px;*/
+	border-bottom: solid 1px #ccc;
+	box-shadow: inset 0px 0px 10px 1px #000;
+}
+.feed-post-img{
+	margin: 10px auto;
+}
+.feed-row{
+	position: relative;
+	padding: 10px;
+	background: rgba(255,255,255,0.4);
+	margin-left: 60px;
+	margin-bottom: 10px;
+	min-height: 125px;
+	border-radius: 2px;
+	border: solid 1px #D8D8D8;
+	background-color: #F8F8F8;
+	z-index: 1;
+}
+.feed-row:hover, .feed-highlight{
+	border: solid 1px rgba(0,0,0,0.2);
+	background: rgba(255,255,255,0.9);
+	cursor: pointer;
+}
+.feed-highlight{
+	min-height: 230px;
+}
+.feed-highlight .feed-icons{
+	top: 130px !important;
+	-webkit-transition: top 0.2s; /* For Safari 3.1 to 6.0 */
+    transition: top 0.2s;
+}
+.feed-icon{
+	display: inline-block;
+}
+.feed-icons{
+	width: 50px;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	-webkit-transition: top 0.2s; /* For Safari 3.1 to 6.0 */
+    transition: top 0.2s;
+	left: -58px;
+	background-color: #e2e2e2;
+	border-radius: 2px;
+	border: solid 1px #D8D8D8;
+	padding-bottom: 10px;
+}
+.feed-icons i{
+	display: block;
+	margin-bottom: -5px !important;
+}
+.feed-icons i:first{
+	margin-bottom: 0 !important;
+}
+.feed-class-icon{
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	margin: 5px auto;
+}
+.feed-title{
+	font-size: 18px;
+	display: table;
+}
+.feed-title a:hover{
+	text-decoration: underline;
+}
+.feed-title a{
+	color: #1371AB;
+}
+.feed-classname{
+	padding-left: 1px;
+	display: table;
+	font-size: 11px;
+	font-weight: bold;
+	color: #999;
+	text-shadow: 0 1px 1px #fff;
+	text-transform: uppercase;
+}
+.feed-username>a{
+	font-family: "Friz2";
+	color: #CC3D23;
+}
+.feed-time{
+	font-size: 12px;
+	font-family: arial;
+	color: #999;
+	margin-left: 1px;
+}
+.feed-level{
+	color: #56b381;
+	font-size: 18px !important;
+	min-width: 40px !important;
+	padding: 15px 10px !important;
+}
+.feed-info{
+	height: 50px;
+	margin-left: -10px;
+	margin-top: 5px;
+}
+.feed-info>div{
+	display: inline-block;
+	float: left;
+	padding: 15px 5px;
+	border-right: solid 1px #e2e2e2;
+	height: 50px;
+	min-width: 60px;
+	vertical-align: middle;
+	font-size: 24px;
+}
+.feed-las {
+	padding: 0 !important;
+	border: 0 !important;
+	overflow: hidden;
+}
+.feed-las>div {
+	line-height: 100%;
+	text-align: right;
+	white-space: nowrap;
+	float: left;
+	clear: left;
+	margin-top: 4px;
+}
+.feed-las>div>i{
+	display: none;
+}
+.feed-las>a, .feed-las>div>a{
+	background-size: 24px;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	border: 1px solid #222;
+	border-radius: 4px;
+	display: inline-block;
+	box-shadow: 0 0 1px #FFF;
+	margin-right: 2px;
+}
+.feed-more {
+	display: none;
+	border-top: solid 1px #e2e2e2;
+	padding-top: 5px;
+}
+.feed-rising{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 18px;
+	color: #33cc33;
+	text-shadow: 0 0 1px #CCC;
+}
+.feed-ratings{
+	font-size: 14px !important;
+	vertical-align: middle !important;
+	padding: 0 15px !important;
+	text-align: center;
+	width: 105px;
+}
+.feed-numbers{
+	color: #555;
+	font-size: 14px !important;
+	padding: 5px !important;
+	text-align: left;
+	border-right: 0 !important;
+}
+.feed-badges{
+	margin-left: 2px;
+	width: 50px;
+	display: inline-block;
+	vertical-align: top;
+	color: rgb(255, 77, 44);
+	text-shadow: 0 0 2px rgb(255, 77, 44);
+	font-size: 14px;
+}
+.feed-badges>span{
+	margin-right: 4px;
+}
+
+.home-find-guides {
+	background: rgb(204, 61, 35) !important;
+	color: #FFF !important;
+	box-shadow: inset 0 0 1px #323232;
+	border: solid 1px #transparent !important;
+}
+.home-find-guides:hover {
+	background: rgb(255, 77, 44) !important;
+}
+
+.rating span {
+	display: block;
+	height: 12px;
+	font-size: 10px;
+	line-height: 12px;
+	text-align: right;
+	background: #14e42c;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, #14e42c 0%, #0a8f0d 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#14e42c), color-stop(100%,#0a8f0d));
+	background: -webkit-linear-gradient(top, #14e42c 0%,#0a8f0d 100%);
+	background: -o-linear-gradient(top, #14e42c 0%,#0a8f0d 100%);
+	background: -ms-linear-gradient(top, #14e42c 0%,#0a8f0d 100%);
+	background: linear-gradient(to bottom, #14e42c 0%,#0a8f0d 100%);
+}
+.rating {
+	margin: 4px 0 2px;
+	height: 14px;
+	width: 100%;
+	max-width: 95px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	/*border: 1px solid #0e1a2c!important;
+	box-shadow: 3px 3px 0 0 #131e31, -3px -3px 0 0 #131e31, -3px 3px 0 0 #131e31, 3px -3px 0 0 #131e31;*/
+	
+	border: 1px solid #323232 !important;
+	box-shadow: 3px 3px 0 0 #323232, -3px -3px 0 0 #323232, -3px 3px 0 0 #323232, 3px -3px 0 0 #323232;	
+	
+	background: #0f1929;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, #0f1929 0%, #1a283f 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0f1929), color-stop(100%,#1a283f));
+	background: -webkit-linear-gradient(top, #0f1929 0%,#1a283f 100%);
+	background: -o-linear-gradient(top, #0f1929 0%,#1a283f 100%);
+	background: -ms-linear-gradient(top, #0f1929 0%,#1a283f 100%);
+	background: linear-gradient(to bottom, #0f1929 0%,#1a283f 100%);
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.rating.new {
+	background: #323232;
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+	background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+	background-size: 40px 40px;
+}
+
+.top-user{
+	display: block;
+	background-color: #e2e2e2;
+	border-radius: 2px;
+	border: solid 1px #D8D8D8;
+	padding: 4px;
+	margin-bottom: 4px;
+	font-weight: bold;
+	color: #CC3D23;
+}
+.top-user:last-child{
+	margin-bottom: 0;
+}
+.top-user:hover{
+	text-decoration: none;
+}
+
+/* General */
+.btn-create {
+	border: 0 !important;
+	color: #FFF !important;
+	padding: 0 !important;
+	width: 155px;
+	display: block;
+	color: #ffffff;
+	font: 18px Cambria, Georgia, "Times New Roman", Times, serif;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	background: url(http://arche-base.com/img/red_button.png) left top no-repeat;
+	background-size: 155px 80px;
+}
+.btn-create:hover {
+	background-color: transparent !important;
+	text-decoration: none;
+	background-position: 0px -40px;
+	color: #FFF;
+}
+
+/* Bootstrap Addon */
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #ff4d2c;
+  background-color: #FFF;
+  border: 1px solid;
+}
+.nav-pills>li>a:focus, .nav-pills>li>a:hover {
+  background-color: #FFF;
+  text-shadow: none!important;
+  color: #666;
+  text-decoration: none;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  text-shadow: 1px 1px 30px #999;
+}
+.nav-pills>li>a {
+  float: left;
+  background-color: #f8f8f8;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px 3px 0 0;
+  margin-right: 5px;
+  font-size: 14px;
+  color: #999;
+  text-shadow: none;
 }

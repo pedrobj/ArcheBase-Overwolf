@@ -1,33 +1,164 @@
 ﻿<!DOCTYPE html>
 <html>
-	<head> 
-		<link rel="stylesheet" href="style.css" />
-		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<head>
 		<title>ArcheBase</title>
-		<script>			
-			function closeWindow(){
-				overwolf.windows.getCurrentWindow(function(result){
-					if (result.status=="success"){
-						overwolf.windows.close(result.window.id);
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="style.css" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="feed.js"></script>	
+		<script type="text/javascript" src="archebase-tooltips.js"></script>	
+				
+		<script type="text/javascript">
+			var GLOBAL_PAGE = 1;
+			
+			//Toggle Row
+			$(document).on('click','.feed-row',function(){
+				event.stopPropagation();
+				$(this).toggleClass("feed-highlight").find(".feed-more").slideToggle(200);
+			});
+			
+			//Pagination
+			$(document).on('click','._feed-page',function(){
+				$(this).button('loading');
+				GLOBAL_PAGE++;
+				archebaseFeed.init({
+					element: $('#feed-content'),
+					type: $(this).attr("data-type"),
+					page: GLOBAL_PAGE
+				});
+			});
+			
+			//Filter
+			$(document).on('click','._filter',function(){
+				$("#feed-content").empty();
+				$("._feed-page").button('loading').attr('data-type', $(this).attr("data-type"));
+				GLOBAL_PAGE = 1;
+				archebaseFeed.init({
+					element: $('#feed-content'),
+					type: $(this).attr("data-type"),
+					page: GLOBAL_PAGE
+				});
+			});
+	
+			//OverWolf
+			function openSubWindow(){
+				overwolf.windows.obtainDeclaredWindow("SubWindow", function(result){
+					if (result.status == "success"){
+						overwolf.windows.restore(result.window.id, function(result){
+								console.log(result);
+						});
 					}
 				});
 			};
-			
 			function openIframe(url){
 				window.open(url, "content");
 			}
+			
+			$(function(){
+				$('[data-toggle="tooltip"]').tooltip();
+				
+				archebaseFeed.init({
+					element: $('#feed-content'),
+					type: 'rising'
+				});
+				
+				$(".feed-row:first").trigger("click");
+			});
+		</script>
+		
+		<script type="text/template" id="feed-template">
+			<div class="feed-row">
+				<div class="feed-icons">			
+					<i class="icon small t{build.Tree1.id} tp" data-toggle="tooltip" title="{build.Tree1.name}"></i>
+					<i class="icon small t{build.Tree2.id} tp" data-toggle="tooltip" title="{build.Tree2.name}"></i>
+					<i class="icon small t{build.Tree3.id} tp" data-toggle="tooltip" title="{build.Tree3.name}"></i>
+				</div>
+				<span class="feed-username">	
+					<a href="/profile/{build.User.username}">{build.User.username}</a>
+				</span>
+				
+				<span class="feed-time">{build.Build.modified}</span>
+				
+				<div class="feed-badges">
+					<span class="fire-badge glyphicon glyphicon-fire tp" title="Hot Rising Build"></span>
+					<span class="popular-badge glyphicon glyphicon-comment tp" title="Popular Build"></span>
+				</div>
+				
+				<div class="feed-rising tp" title="Likes Last Week" data-container="body" style="display:none;">
+					<span class="glyphicon glyphicon-chevron-up"></span> {build.Build.votes_rising}
+				</div>
+				
+				<span class="feed-title">
+					<a class="color-" href="{build.Build.url}">{build.Build.title}</a>
+				</span>
+				
+				<span class="feed-classname">	
+					{build.Build.role}
+				</span>
+		
+				<div class="feed-info">
+					<div class="feed-level tp" title="Level" data-container="body">{build.Build.level}</div>
+					<div class="text-center" style="min-width: 0;">
+						<span class="glyphicon glyphicon-text-width tp" data-container="body" style="color: #000; text-shadow: 0 0 2px #000;" data-html="true" title="Content score: <b><font color='#000'>{build.Build.content}</font></b>"></span>
+						<span class="tp updated" data-html="true">
+								<span class="glyphicon glyphicon-time"></span>
+						</span>
+					</div>
+					
+					<div class="feed-ratings">
+						<span style="color:#FFCC00">{build.Build.votes_total} votes</span><br/>
+						<span class="rating tp" data-placement="right" title="{build.Build.rating}">
+							<span style="width: {build.Build.rating}%;"></span>
+						</span>
+					</div>
+					
+					<div class="feed-numbers">
+						<div>
+							<span class="glyphicon glyphicon-eye-open" title="Views"></span> {build.Build.views}
+						</div>
+						<div>
+							<span class="glyphicon glyphicon-comment" title="Comments"></span> {build.Build.comments}
+						</div>
+					</div>		
+				</div>
+				<div class="feed-more">
+					<div class="feed-las">
+						<div class="feed-las-t1"></div>
+						<div class="feed-las-t2"></div>
+						<div class="feed-las-t3"></div>
+					</div>
+				</div>
+			</div>
 		</script>
 	</head>
-
 	<body>
 		<div id="topmenu">
 			<a class="logo" href="/"><img src="logo.png" alt="ArcheBase" style=""></a>
 			<ul>
-				<li><a onclick="openIframe('http://arche-base.com/builds/generator');" href="#"><i class="glyphicon glyphicon-tasks"></i> Builder</a></li>
-				<li><a onclick="openIframe('http://arche-base.com/builds/search');" href="#"><i class="glyphicon glyphicon-search"></i> Search</a></li>
 				<li><a onclick="openIframe('http://arche-base.com/streams');" href="#">Streams</a></li>
+				<li><a onclick="openIframe('http://arche-base.com/posts');" href="#">Releases</a></li>
 			</ul>
 		</div>
-		<iframe name="content" src="http://arche-base.com/builds/generator" width="100%" height="100%" frameborder="0"></iframe>
+		
+		<ul class="nav nav-pills" style="padding: 12px 0 0 12px;">
+			<li class="active"><a href="#" data-toggle="tab" data-type="rising" class="_filter" data-toggle="tooltip" title="Rising"><span class="glyphicon glyphicon-signal"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="rating" class="_filter" data-toggle="tooltip" title="Rating"><span class="glyphicon glyphicon-thumbs-up"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="comment_count" class="_filter" data-toggle="tooltip" title="Popular"><span class="glyphicon glyphicon-comment"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="views" class="_filter" data-toggle="tooltip" title="Views"><span class="glyphicon glyphicon-eye-open"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="content" class="_filter" data-toggle="tooltip" title="Score"><span class="glyphicon glyphicon-text-height"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="" class="_filter" data-toggle="tooltip" title="Updated"><span class="glyphicon glyphicon-leaf"></span></a></li>
+			<li><a class="home-find-guides" href="#" onclick="openSubWindow();"><span class="glyphicon glyphicon-search"></span> Find Guides</a></li>
+			<li><a class="btn-create" href="#" onclick="openSubWindow();">Create</a></li>
+		</ul>
+		
+		<div id="feed-content"></div>
+		<div id="feed-bottom">
+			<button class="_feed-page btn btn-primary text-center" style="display:none;" data-loading-text="<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>">See More</button>
+		</div>
 	</body>
 </html>

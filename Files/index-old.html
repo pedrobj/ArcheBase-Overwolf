@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<link rel="stylesheet" href="style.css" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<title>ArcheBase</title>
+		<script>			
+			function closeWindow(){
+				overwolf.windows.getCurrentWindow(function(result){
+					if (result.status=="success"){
+						overwolf.windows.close(result.window.id);
+					}
+				});
+			};
+			
+			function openIframe(url){
+				window.open(url, "content");
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="topmenu">
+			<a class="logo" href="/"><img src="logo.png" alt="ArcheBase" style=""></a>
+			<ul>
+				<li><a onclick="openIframe('http://arche-base.com/builds/generator');" href="#"><i class="glyphicon glyphicon-tasks"></i> Builder</a></li>
+				<li><a onclick="openIframe('http://arche-base.com/builds/search');" href="#"><i class="glyphicon glyphicon-search"></i> Search</a></li>
+				<li><a onclick="openIframe('http://arche-base.com/streams');" href="#">Streams</a></li>
+			</ul>
+		</div>
+		<iframe name="content" src="http://arche-base.com/builds/generator" width="100%" height="100%" frameborder="0"></iframe>
+	</body>
+</html>
