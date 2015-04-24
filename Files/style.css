@@ -1,7 +1,5 @@
 ﻿html, body {
-	height: 100%;
-	width: 100%;
-	background: transparent;
+	background: #FFF;
 	padding: 0;
 	margin: 0 auto;
 }
@@ -12,7 +10,8 @@ iframe {
 
 #topmenu{
 	border-bottom: solid 1px #CC3D23;
-	height: 34px;
+	height: 40px;
+	padding: 3px;
 }
 #topmenu .logo{
 	float: left;

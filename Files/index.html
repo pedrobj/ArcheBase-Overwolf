@@ -46,21 +46,25 @@
 			});
 	
 			//OverWolf
-			function openSubWindow(){
-				overwolf.windows.obtainDeclaredWindow("SubWindow", function(result){
+			function openSubWindow(target, send){
+				overwolf.windows.obtainDeclaredWindow(target, function(result){
 					if (result.status == "success"){
 						overwolf.windows.restore(result.window.id, function(result){
-								console.log(result);
+							if(send){
+								window.localStorage.setItem( 'view_build', JSON.stringify( {url:send} ) );
+							}
+							console.log(result); 
 						});
 					}
 				});
 			};
+			
 			function openIframe(url){
 				window.open(url, "content");
 			}
 			
 			$(function(){
-				$('[data-toggle="tooltip"]').tooltip();
+				$('[data-toggle="tooltip"], .tp').tooltip();
 				
 				archebaseFeed.init({
 					element: $('#feed-content'),
@@ -94,7 +98,7 @@
 				</div>
 				
 				<span class="feed-title">
-					<a class="color-" href="{build.Build.url}">{build.Build.title}</a>
+					<a class="color-" onclick="openSubWindow('View','{build.Build.url}')" href="#">{build.Build.title}</a>
 				</span>
 				
 				<span class="feed-classname">	
@@ -146,14 +150,14 @@
 		</div>
 		
 		<ul class="nav nav-pills" style="padding: 12px 0 0 12px;">
-			<li class="active"><a href="#" data-toggle="tab" data-type="rising" class="_filter" data-toggle="tooltip" title="Rising"><span class="glyphicon glyphicon-signal"></span></a></li>
-			<li><a href="#" data-toggle="tab" data-type="rating" class="_filter" data-toggle="tooltip" title="Rating"><span class="glyphicon glyphicon-thumbs-up"></span></a></li>
-			<li><a href="#" data-toggle="tab" data-type="comment_count" class="_filter" data-toggle="tooltip" title="Popular"><span class="glyphicon glyphicon-comment"></span></a></li>
-			<li><a href="#" data-toggle="tab" data-type="views" class="_filter" data-toggle="tooltip" title="Views"><span class="glyphicon glyphicon-eye-open"></span></a></li>
-			<li><a href="#" data-toggle="tab" data-type="content" class="_filter" data-toggle="tooltip" title="Score"><span class="glyphicon glyphicon-text-height"></span></a></li>
-			<li><a href="#" data-toggle="tab" data-type="" class="_filter" data-toggle="tooltip" title="Updated"><span class="glyphicon glyphicon-leaf"></span></a></li>
+			<li class="active"><a href="#" data-toggle="tab" data-type="rising" class="_filter tp" data-toggle="tooltip" title="Rising"><span class="glyphicon glyphicon-signal"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="rating" class="_filter tp" title="Rating"><span class="glyphicon glyphicon-thumbs-up"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="comment_count" class="_filter tp" title="Popular"><span class="glyphicon glyphicon-comment"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="views" class="_filter tp" title="Views"><span class="glyphicon glyphicon-eye-open"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="content" class="_filter tp" title="Score"><span class="glyphicon glyphicon-text-height"></span></a></li>
+			<li><a href="#" data-toggle="tab" data-type="" class="_filter tp" title="Updated"><span class="glyphicon glyphicon-leaf"></span></a></li>
 			<li><a class="home-find-guides" href="#" onclick="openSubWindow();"><span class="glyphicon glyphicon-search"></span> Find Guides</a></li>
-			<li><a class="btn-create" href="#" onclick="openSubWindow();">Create</a></li>
+			<li><a class="btn-create" href="#" onclick="openSubWindow('Generator');">Create</a></li>
 		</ul>
 		
 		<div id="feed-content"></div>

@@ -14,13 +14,31 @@
 		"start_window":"MainWindow",
 		"windows":{
 			"MainWindow":{
-					"file":"Files/index.html",
-					"transparent":false,
-					"resizable":false,
-					"size":{"width":750, "height":500},
-					"min_size":{"width":750, "height":500},
-					"max_size":{"width":750, "height":500}
-				}
+				"file":"Files/index.html",
+				"transparent":true,
+				"resizable":false,
+				"size":{"width":750, "height":500},
+				"min_size":{"width":750, "height":500},
+				"max_size":{"width":750, "height":500}
+			},
+            "Generator": {
+                "file": "Files/generator.html",
+                "transparent": false,
+                "resizable": false,
+                "size": {"width": 750, "height": 550},
+				"min_size":{"width":750, "height":550},
+				"max_size":{"width":750, "height":550},
+                "in_game_only": false
+            },
+            "View": {
+                "file": "Files/view.html",
+                "transparent": false,
+                "resizable": false,
+                "size": {"width": 750, "height": 550},
+				"min_size":{"width":750, "height":550},
+				"max_size":{"width":750, "height":550},
+                "in_game_only": false
+            }
 		},
 		"externally_connectable": {
 			"matches": [
