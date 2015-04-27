@@ -15,28 +15,28 @@
 		"windows":{
 			"MainWindow":{
 				"file":"Files/index.html",
-				"transparent":true,
-				"resizable":false,
+				"transparent":false,
+				"resizable":true,
 				"size":{"width":750, "height":500},
-				"min_size":{"width":750, "height":500},
-				"max_size":{"width":750, "height":500}
+				"min_size":{"width":450, "height":550},
+				"max_size":{"width":1280, "height":800}
 			},
             "Generator": {
                 "file": "Files/generator.html",
                 "transparent": false,
-                "resizable": false,
-                "size": {"width": 750, "height": 550},
-				"min_size":{"width":750, "height":550},
-				"max_size":{"width":750, "height":550},
+                "resizable": true,
+                "size": {"width": 780, "height": 550},
+				"min_size":{"width":450, "height":550},
+				"max_size":{"width":1280, "height":800},
                 "in_game_only": false
             },
             "View": {
                 "file": "Files/view.html",
                 "transparent": false,
-                "resizable": false,
-                "size": {"width": 750, "height": 550},
-				"min_size":{"width":750, "height":550},
-				"max_size":{"width":750, "height":550},
+                "resizable": true,
+                "size": {"width": 780, "height": 550},
+				"min_size":{"width":450, "height":550},
+				"max_size":{"width":1280, "height":800},
                 "in_game_only": false
             }
 		},

@@ -35,6 +35,8 @@ var archebaseFeed=new function(){
 	
 		$("._feed-page").button('reset').fadeIn('slow');
 		options.element.find("#page-"+options.page).fadeIn('slow');
+		
+		$(".tp").tooltip();
 	}
 	
 	this.drawFeed=function(){

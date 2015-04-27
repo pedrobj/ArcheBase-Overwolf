@@ -11,7 +11,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="feed.js"></script>	
-		<script type="text/javascript" src="archebase-tooltips.js"></script>	
+		<script type="text/javascript" src="archebase-tooltips.js"></script>
 				
 		<script type="text/javascript">
 			var GLOBAL_PAGE = 1;
@@ -53,7 +53,7 @@
 							if(send){
 								window.localStorage.setItem( 'view_build', JSON.stringify( {url:send} ) );
 							}
-							console.log(result); 
+							console.log(result);
 						});
 					}
 				});
@@ -98,7 +98,7 @@
 				</div>
 				
 				<span class="feed-title">
-					<a class="color-" onclick="openSubWindow('View','{build.Build.url}')" href="#">{build.Build.title}</a>
+					<a class="color-" onclick="openSubWindow('View','{build.Build.url}?url={build.Build.url}')" href="#">{build.Build.title}</a>
 				</span>
 				
 				<span class="feed-classname">	
@@ -109,9 +109,9 @@
 					<div class="feed-level tp" title="Level" data-container="body">{build.Build.level}</div>
 					<div class="text-center" style="min-width: 0;">
 						<span class="glyphicon glyphicon-text-width tp" data-container="body" style="color: #000; text-shadow: 0 0 2px #000;" data-html="true" title="Content score: <b><font color='#000'>{build.Build.content}</font></b>"></span>
-						<span class="tp updated" data-html="true">
+						<!--<span class="tp updated" data-html="true">
 								<span class="glyphicon glyphicon-time"></span>
-						</span>
+						</span>-->
 					</div>
 					
 					<div class="feed-ratings">
@@ -156,7 +156,7 @@
 			<li><a href="#" data-toggle="tab" data-type="views" class="_filter tp" title="Views"><span class="glyphicon glyphicon-eye-open"></span></a></li>
 			<li><a href="#" data-toggle="tab" data-type="content" class="_filter tp" title="Score"><span class="glyphicon glyphicon-text-height"></span></a></li>
 			<li><a href="#" data-toggle="tab" data-type="" class="_filter tp" title="Updated"><span class="glyphicon glyphicon-leaf"></span></a></li>
-			<li><a class="home-find-guides" href="#" onclick="openSubWindow();"><span class="glyphicon glyphicon-search"></span> Find Guides</a></li>
+			<!--<li><a class="home-find-guides" href="#" onclick="openIframe('http://arche-base.com/builds/search');"><span class="glyphicon glyphicon-search"></span> Find Guides</a></li>-->
 			<li><a class="btn-create" href="#" onclick="openSubWindow('Generator');">Create</a></li>
 		</ul>
 		
