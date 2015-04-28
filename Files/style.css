@@ -1,4 +1,25 @@
-﻿html, body {
+﻿/* Scrollbar */
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+	display:none;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+
+html, body {
 	background: #FFF;
 	padding: 0;
 	margin: 0 auto;
@@ -40,6 +61,7 @@ iframe {
 }
 #topmenu ul li>a:hover{
 	background-color: #CC3D23;
+	color: #FFF;
 }
 
 /* ----------------- Icons ----------------- */
@@ -47,20 +69,12 @@ i.icon {
 	border: solid 1px #323232;
 	margin: 0 auto;
 	border: 0;
-	background-size: 94px;
-	width: 94px;
-	height: 94px;
+	background-size: cover;
 	cursor: pointer;
 }
-i.min {
-	background-size: 28px 28px !important;
-	width: 28px;
-	height: 28px;
-}
 i.thumb{
-	background-size: 58px !important;
-	width:58px;
-	height:58px;
+	width: 38px;
+	height: 38px;
 }
 i.small{
 	background-size: 34px 36px !important;
@@ -422,26 +436,56 @@ i.t10{
 	text-decoration: none;
 }
 
+/* Fiters */
+.filter-trees{
+	position: relative;
+	max-width: 380px;
+	margin: 0px 14px;
+}
+.filter-trees .list-icons i {
+  opacity: 0.4;
+}
+.filter-trees .list-icons i:hover, .filter-trees i.active {
+	opacity: 1;
+	-webkit-filter: drop-shadow(5px 10px 0px rgba(0,0,0,0.5));
+	text-shadow: 0px 0px 15px #FFF;
+}
+.filter-trees i {
+	display: inline-block;
+}
+.list-icons>div{
+	float: left;
+}
+.list-icons input{
+	display: none;
+}
+.list-icons .checkbox{
+	margin: 0;
+}
+._class-name{
+	font-size: 19px;
+	color: #999;
+	margin-top: 5px;
+}
+
 /* General */
 .btn-create {
 	border: 0 !important;
 	color: #FFF !important;
 	padding: 0 !important;
-	width: 155px;
+	width: 96px;
 	display: inline-block;
 	vertical-align: bottom;
-	color: #ffffff;
 	font: 18px Cambria, Georgia, "Times New Roman", Times, serif;
-	line-height: 40px;
 	text-align: center;
 	text-transform: uppercase;
 	background: url(http://arche-base.com/img/red_button.png) left top no-repeat;
-	background-size: 155px 80px;
+	background-size: 95px 68px;
 }
 .btn-create:hover {
 	background-color: transparent !important;
 	text-decoration: none;
-	background-position: 0px -40px;
+	background-position: 0px -34px;
 	color: #FFF;
 }
 

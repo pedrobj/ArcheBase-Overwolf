@@ -3,7 +3,8 @@ var archebaseFeed=new function(){
 		element:$('#feed-content'),
 		type: 'rising',
 		page: 1,
-		limit: 5
+		limit: 5,
+		trees: ''
 	};
 	
 	this.init=function(opts){
@@ -17,10 +18,8 @@ var archebaseFeed=new function(){
 	
 	this.get=function(){
 		options.element.find("#page-"+options.page).hide();
-		
-		//http://arche-base.com/api/builds/'+options.type+'/page:'+options.page+'/direction:desc?script=true&limit='+options.limit+'&page='+options.page+'order='+options.type
 		$.ajax({
-			url: 'http://arche-base.com/api/builds?script=true&limit='+options.limit+'&page='+options.page+'&type='+options.type,
+			url: 'http://arche-base.com/api/builds?script=true&limit='+options.limit+'&page='+options.page+'&type='+options.type+'&trees='+options.trees,
 			dataType: 'jsonp',
 			crossDomain: true,
 			jsonpCallback: 'archebaseFeed.load',
@@ -46,35 +45,40 @@ var archebaseFeed=new function(){
 				.attr('id', 'page-'+options.page)
 		);
 		
-		$.each(data.builds, function(key, build){
-			options.element.find("#page-"+options.page).append(formatFeed(build));
-			
-			var dataTree = [build.Tree1, build.Tree2, build.Tree3];
-			for(var tree in dataTree){
-				if(dataTree[tree].Skills.length > 0){
-					$(".feed-row:last").find('.feed-las-t'+(parseInt(tree)+1)).append(
-						$('<i>')
-							.addClass('icon min t'+dataTree[tree].id)
-							.attr('title', dataTree[tree].name)
-					);
-					for(var i in dataTree[tree].Skills){
+		if(data.builds.length > 0){
+			$.each(data.builds, function(key, build){
+				options.element.find("#page-"+options.page).append(formatFeed(build));
+				
+				var dataTree = [build.Tree1, build.Tree2, build.Tree3];
+				for(var tree in dataTree){
+					if(dataTree[tree].Skills.length > 0){
 						$(".feed-row:last").find('.feed-las-t'+(parseInt(tree)+1)).append(
-							$('<a>')
-								.css('background-image', 'url('+dataTree[tree].Skills[i].icon+')')
-								.attr('href', dataTree[tree].Skills[i].tooltip)
-								.attr('data-tp', 'TODO')
-								.addClass('tp-base spell-icon')
+							$('<i>')
+								.addClass('icon min t'+dataTree[tree].id)
+								.attr('title', dataTree[tree].name)
 						);
+						for(var i in dataTree[tree].Skills){
+							$(".feed-row:last").find('.feed-las-t'+(parseInt(tree)+1)).append(
+								$('<a>')
+									.css('background-image', 'url('+dataTree[tree].Skills[i].icon+')')
+									.attr('href', dataTree[tree].Skills[i].tooltip)
+									.attr('data-tp', 'TODO')
+									.addClass('tp-base spell-icon')
+							);
+						}
 					}
 				}
-			}
-			
-			var content = buildContentInfo(build.Build.content);
-			$(".feed-row:last").find('.glyphicon-text-width').css('color', content.color).attr('title', content.name);
-			
-			if(build.Build.votes_rising > 0)
-				$(".feed-row:last").find(".feed-rising").show(0);
-		});
+				
+				var content = buildContentInfo(build.Build.content);
+				$(".feed-row:last").find('.glyphicon-text-width').css('color', content.color).attr('title', content.name);
+				
+				if(build.Build.votes_rising > 0)
+					$(".feed-row:last").find(".feed-rising").show(0);
+			});
+		}
+		else{
+			options.element.find("#page-"+options.page).append("No results.").css({color:'#777',margin:'10px'});
+		}
 	}
 	
 	function formatFeed(build){
