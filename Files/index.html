@@ -10,9 +10,9 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="feed.js"></script>
-		<script type="text/javascript" src="index.js"></script>
-		<script type="text/javascript" src="archebase-tooltips.js"></script>
+		<script type="text/javascript" src="js/feed.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/archebase-tooltips.js"></script>
 				
 		<script type="text/javascript">			
 			$(function(){
@@ -50,7 +50,7 @@
 				</div>
 				
 				<span class="feed-title">
-					<a class="color-" onclick="openSubWindow('View','{build.Build.url}?url={build.Build.url}')" href="#">{build.Build.title}</a>
+					<a class="_view" data-link="{build.Build.url}" onclick="" href="#">{build.Build.title}</a><!--openSubWindow('View','{build.Build.url}')-->
 				</span>
 				
 				<span class="feed-classname">	
@@ -96,9 +96,9 @@
 		<div id="topmenu">
 			<a class="logo" href="/"><img src="logo.png" alt="ArcheBase" style=""></a>
 			<ul>
-				<li><a onclick="openIframe('http://arche-base.com/streams');" href="#">Streams</a></li>
-				<li><a onclick="openIframe('http://arche-base.com/posts');" href="#">Releases</a></li>
-				<li><a class="btn-create" href="#" onclick="openSubWindow('Generator');">Create</a></li>
+				<li><a class="_view" data-link="http://arche-base.com/streams" href="#">Streams</a></li>
+				<li><a class="_view" data-link="http://arche-base.com/posts" href="#">Releases</a></li>
+				<li><a class="_view btn-create" href="#" data-link="http://arche-base.com/builds/generator">Create</a></li>
 			</ul>
 		</div>
 		
@@ -151,6 +151,12 @@
 		<div id="feed-content"></div>
 		<div id="feed-bottom">
 			<button class="_feed-page btn btn-primary text-center" style="display:none;" data-loading-text="<span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span>">See More</button>
+		</div>
+		
+		<div id="view">
+			<button class="btn btn-primary text-center" style="display: none;"><span class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></span></button>
+			<span class="_view-back glyphicon glyphicon-circle-arrow-left" style="display:none;"></span>
+			<iframe id="view-iframe" src="" width="100%" height="100%" style="display:none;" />
 		</div>
 	</body>
 </html>

@@ -42,6 +42,32 @@ function checkTrees(){
 		$("._class-name").empty();
 }
 
+//View in Iframe - data-link=""
+$(document).on('click','._view',function(){
+	var url = $(this).attr("data-link");
+	if(url){
+		$("#view>button").fadeIn('slow'); //Loading
+		$("#view-iframe").show().attr("src",url);
+		$('body').children().not('#view').hide();
+		
+		document.getElementById("view-iframe").onload = function(){
+			$("#view").children().fadeIn('slow');
+			$('html, body').animate({
+				scrollTop: $('#view').last().offset().top
+			}, 500);
+			$("#view>button").hide(); //Loading
+		};
+	}
+});
+//View Back
+$(document).on('click','._view-back',function(){
+	$("#view-iframe").attr('src','');
+	document.getElementById("view-iframe").onload = function(){
+		$("#view-iframe, ._view-back").hide();
+		$('body').children().not('iframe, #view-iframe').show();
+	}
+});
+
 //Toggle Row
 $(document).on('click','.feed-row',function(){
 	event.stopPropagation();
