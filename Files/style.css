@@ -1,7 +1,8 @@
 ﻿/* Scrollbar */
 body {
-    overflow-y: scroll;
+/*    overflow-y: scroll;
     overflow-x: hidden;
+*/
 }
 ::-webkit-scrollbar {
     width: 8px;

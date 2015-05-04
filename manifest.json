@@ -17,28 +17,10 @@
 				"file":"Files/index.html",
 				"transparent":false,
 				"resizable":true,
-				"size":{"width":750, "height":500},
-				"min_size":{"width":450, "height":550},
-				"max_size":{"width":1280, "height":800}
+				"size":{"width":772, "height":620},
+				"min_size":{"width":450, "height":300},
+				"max_size":{"width":772, "height":620}
 			},
-            "Generator": {
-                "file": "Files/generator.html",
-                "transparent": false,
-                "resizable": true,
-                "size": {"width": 780, "height": 550},
-				"min_size":{"width":450, "height":550},
-				"max_size":{"width":1280, "height":800},
-                "in_game_only": false
-            },
-            "View": {
-                "file": "Files/view.html",
-                "transparent": false,
-                "resizable": true,
-                "size": {"width": 780, "height": 550},
-				"min_size":{"width":450, "height":550},
-				"max_size":{"width":1280, "height":800},
-                "in_game_only": false
-            }
 		},
 		"externally_connectable": {
 			"matches": [
