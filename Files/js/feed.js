@@ -19,7 +19,7 @@ var archebaseFeed=new function(){
 	this.get=function(){
 		options.element.find("#page-"+options.page).hide();
 		$.ajax({
-			url: 'http://arche-base.com/api/builds?script=true&limit='+options.limit+'&page='+options.page+'&type='+options.type+'&trees='+options.trees,
+			url: 'http://archeage.earlygame.net/api/builds?script=true&limit='+options.limit+'&page='+options.page+'&type='+options.type+'&trees='+options.trees,
 			dataType: 'jsonp',
 			crossDomain: true,
 			jsonpCallback: 'archebaseFeed.load',
