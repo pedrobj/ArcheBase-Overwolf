@@ -85,34 +85,34 @@ i.small{
 
 /* trees */
 i.t1{
-	background-image: url(http://arche-base.com/img/icons/Tree/0.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/0.png);
 }
 i.t2{
-	background-image: url(http://arche-base.com/img/icons/Tree/1.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/1.png);
 }
 i.t3{
-	background-image: url(http://arche-base.com/img/icons/Tree/2.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/2.png);
 }
 i.t4{
-	background-image: url(http://arche-base.com/img/icons/Tree/3.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/3.png);
 }
 i.t5{
-	background-image: url(http://arche-base.com/img/icons/Tree/4.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/4.png);
 }
 i.t6{
-	background-image: url(http://arche-base.com/img/icons/Tree/5.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/5.png);
 }
 i.t7{
-	background-image: url(http://arche-base.com/img/icons/Tree/6.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/6.png);
 }
 i.t8{
-	background-image: url(http://arche-base.com/img/icons/Tree/7.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/7.png);
 }
 i.t9{
-	background-image: url(http://arche-base.com/img/icons/Tree/8.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/8.png);
 }
 i.t10{
-	background-image: url(http://arche-base.com/img/icons/Tree/9.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/Tree/9.png);
 }
 
 /* roles */
@@ -120,7 +120,7 @@ i.t10{
 	display: inline-block;
 	width: 45px;
 	height: 36px;
-	background-image: url(http://arche-base.com/img/icons/roles.png);
+	background-image: url(http://earlygame.net/img/archeage/icons/roles.png);
 	color: #CCC;
 	text-align: center;
 	font-size: 9px;
@@ -181,7 +181,7 @@ i.t10{
 }
 .feed-main{
 	font-family: "Friz2";
-	background: #eee url(http://arche-base.com/img/archeage/feed-bg.jpg) center no-repeat;
+	background: #eee url(http://earlygame.net/img/archeage/archeage/feed-bg.jpg) center no-repeat;
 	background-size: cover;
 	min-height: 150px;
 	position: relative;
@@ -511,7 +511,7 @@ i.t10{
 	font: 18px Cambria, Georgia, "Times New Roman", Times, serif;
 	text-align: center;
 	text-transform: uppercase;
-	background: url(http://arche-base.com/img/red_button.png) left top no-repeat;
+	background: url(http://earlygame.net/img/archeage/red_button.png) left top no-repeat;
 	background-size: 95px 68px;
 }
 .btn-create:hover {
