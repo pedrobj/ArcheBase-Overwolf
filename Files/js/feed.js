@@ -19,7 +19,7 @@ var archebaseFeed=new function(){
 	this.get=function(){
 		options.element.find("#page-"+options.page).hide();
 		$.ajax({
-			url: 'http://archeage.earlygame.net/api/builds?script=true&limit='+options.limit+'&page='+options.page+'&type='+options.type+'&trees='+options.trees,
+			url: 'http://earlygame.net/api/archeage_builds?script=true&limit='+options.limit+'&page='+options.page+'&type='+options.type+'&trees='+options.trees,
 			dataType: 'jsonp',
 			crossDomain: true,
 			jsonpCallback: 'archebaseFeed.load',
@@ -62,8 +62,8 @@ var archebaseFeed=new function(){
 								$('<a>')
 									.css('background-image', 'url('+dataTree[tree].Skills[i].icon+')')
 									.attr('href', dataTree[tree].Skills[i].tooltip)
-									.attr('data-tp', 'TODO')
-									.addClass('tp-base spell-icon')
+									.attr('data-tp', options.site)
+									.addClass('spell-icon')
 							);
 						}
 					}

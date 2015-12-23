@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
 		},
 	fr = document.createElement('iframe');
 	fr.scrolling = 'no';
-	var url = 'archeage.earlygame.net/api/tooltip';
+	var url = 'http://earlygame.net/api/tooltip/archeage';
 	
 	css.call(fr, {
 		border: 'none',
